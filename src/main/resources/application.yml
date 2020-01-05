@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+spring:
+  datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driverClassName:  com.mysql.jdbc.Driver
+      url: jdbc:mysql://139.9.213.54:3306/empdemo?useUnicode=true&characterEncoding=UTF-8&rewriteBatchedStatements=true&allowMultiQueries=true
+      username: root
+      password: root123ROOT.
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+#    \u6253\u5F00\u4EE5\u4E0B\u6CE8\u91CA \u53EF\u4EE5\u6253\u5370mybatis\u7684\u6700\u7EC8sql
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: mapper/**/*Mapper.xml
+  typeAliasesPackage: com.**.entity
+
+  mapper:
+        refresh:
+          enabled: true
+          delaySeconds: 5
+          sleepSeconds: 2
+          mappingPath: mapper
